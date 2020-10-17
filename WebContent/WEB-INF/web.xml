@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>MyRestaurant</display-name>
+  
+  <!-- 容器启动时回根据ShowMenuServlet类创建一个实例名为menu的servlet对象 -->
+  <servlet>
+  <!-- 定义一个Servlet叫menu -->
+  <servlet-name>menu</servlet-name>
+  <!-- 该servlet的实现类 -->
+  <servlet-class>com.sgm.devtraining.servlet.ShowMenuServlet</servlet-class>
+  </servlet>
+  
+  <!-- 匹配客户端请求，这里的name和上面的name一定要一样 -->
+  <!-- 三种匹配方式 完全/路径/拓展名 拓展名里面没*单独星号 路径可以有/* -->
+  <servlet-mapping>
+    <servlet-name>menu</servlet-name>
+    <url-pattern>/menu</url-pattern>
+  </servlet-mapping>
+  
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
